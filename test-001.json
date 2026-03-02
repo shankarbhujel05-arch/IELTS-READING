@@ -1,0 +1,365 @@
+{
+  "id": "test-001",
+  "title": "The Science of Sleep",
+  "source": "Academic Reading — Practice Test 1",
+  "difficulty": "Band 7–8",
+  "timeLimit": 3600,
+  "passage": {
+    "title": "The Science of Sleep",
+    "paragraphs": [
+      { "id": "A", "text": "Sleep is one of the most fundamental biological processes shared by nearly all animals, yet it remains one of the least understood. For decades, scientists have debated the purpose of sleep, and despite remarkable advances in neuroscience, no single definitive answer has emerged. What is clear is that sleep is not a passive state of unconsciousness but rather an active period during which the brain performs a host of critical tasks, from consolidating memories to clearing metabolic waste." },
+      { "id": "B", "text": "One of the most compelling theories about the function of sleep is the memory consolidation hypothesis. Research conducted at Harvard Medical School demonstrated that people who slept after learning a new motor skill performed significantly better on follow-up tests 12 hours later compared to those who remained awake. During sleep, the hippocampus — a region of the brain critical for forming new memories — replays experiences from the day, transferring them to the neocortex for long-term storage. This process, known as synaptic consolidation, is thought to be essential for both declarative memory (facts and events) and procedural memory (skills and habits)." },
+      { "id": "C", "text": "A more recent and equally fascinating discovery concerns the brain's waste-removal system, known as the glymphatic system. First described by Danish neuroscientist Maiken Nedergaard in 2013, this network of channels surrounding blood vessels becomes dramatically more active during sleep — up to ten times more so than during wakefulness. Cerebrospinal fluid is pumped through these channels, flushing out toxic proteins including beta-amyloid, the substance associated with Alzheimer's disease. Nedergaard's research suggests that insufficient sleep may allow these toxins to accumulate, potentially contributing to neurodegenerative conditions." },
+      { "id": "D", "text": "Sleep architecture — the structure of sleep across a night — is far more complex than most people realise. A typical night's sleep consists of four to six sleep cycles, each lasting approximately 90 minutes. Within each cycle, the sleeper progresses through stages of light sleep (N1), slightly deeper sleep (N2), slow-wave or deep sleep (N3), and finally REM (rapid eye movement) sleep. It is during REM sleep that most vivid dreaming occurs, and this stage is believed to play a vital role in emotional regulation and creative problem-solving. The proportion of each stage shifts throughout the night: early cycles contain more N3 deep sleep, while later cycles contain proportionally more REM." },
+      { "id": "E", "text": "The question of how much sleep humans need has generated considerable debate. The National Sleep Foundation recommends seven to nine hours per night for adults, but individual variation is substantial. A small subset of the population — estimated at less than 3% — carry a genetic mutation in the DEC2 gene that allows them to function optimally on six hours or fewer. For the vast majority, however, habitually sleeping fewer than seven hours is associated with a range of adverse outcomes, including impaired cognitive function, weakened immune response, and increased risk of metabolic disorders such as type 2 diabetes." },
+      { "id": "F", "text": "Modern society's relationship with sleep is deeply troubled. Electric lighting, shift work, and the proliferation of screen-based devices have disrupted the circadian rhythms that have governed human sleep for millennia. The blue light emitted by smartphones and tablets suppresses melatonin production, delaying the onset of sleep. Across industrialised nations, average sleep duration has declined by one to two hours over the past century. Sleep scientists describe this as a 'silent epidemic' — silent because its consequences are gradual, cumulative, and easily attributed to other causes." },
+      { "id": "G", "text": "Treatments for sleep disorders have evolved considerably in recent decades. For insomnia, the most prevalent sleep disorder, cognitive behavioural therapy for insomnia (CBT-I) is now regarded as the gold standard treatment, demonstrating superior long-term outcomes compared to pharmacological interventions. CBT-I addresses the unhelpful thoughts and behaviours that perpetuate insomnia, such as spending excessive time in bed, clock-watching, and catastrophising about poor sleep. While sleeping pills provide short-term relief, they do not treat the underlying causes and are associated with tolerance, dependence, and next-day cognitive impairment." }
+    ]
+  },
+  "sections": [
+    {
+      "id": "s1",
+      "type": "matching_headings",
+      "title": "Questions 1–5: Matching Headings",
+      "instructions": "The reading passage has seven paragraphs, A–G. Choose the correct heading for paragraphs B–F from the list of headings below. Write the correct number, i–ix, in the boxes.",
+      "headings": [
+        { "num": "i", "text": "The genetic basis for individual sleep differences" },
+        { "num": "ii", "text": "How sleep cleans the brain" },
+        { "num": "iii", "text": "Why modern lifestyles are damaging sleep" },
+        { "num": "iv", "text": "The stages and structure of a night's sleep" },
+        { "num": "v", "text": "Treating sleep problems without medication" },
+        { "num": "vi", "text": "How memories are processed during sleep" },
+        { "num": "vii", "text": "The controversy over ideal sleep duration" },
+        { "num": "viii", "text": "Defining the purpose of unconsciousness" },
+        { "num": "ix", "text": "Historical attitudes towards dreaming" }
+      ],
+      "questions": [
+        {
+          "id": "q1", "number": 1, "paragraph": "B",
+          "label": "Paragraph B",
+          "answer": "vi",
+          "hint": "Look for the paragraph that describes how the brain processes information during sleep.",
+          "explanation": "Paragraph B discusses the memory consolidation hypothesis and how the hippocampus replays and transfers memories to the neocortex — this matches heading vi 'How memories are processed during sleep'.",
+          "keyPhrase": "the hippocampus — a region of the brain critical for forming new memories — replays experiences from the day",
+          "remark": "Watch for paraphrase traps: 'consolidation' = 'processed'; 'hippocampus replays' = 'memories are processed during sleep'."
+        },
+        {
+          "id": "q2", "number": 2, "paragraph": "C",
+          "label": "Paragraph C",
+          "answer": "ii",
+          "hint": "Which paragraph mentions toxic substances being removed from the brain?",
+          "explanation": "Paragraph C describes the glymphatic system that flushes out toxic proteins like beta-amyloid during sleep — matching heading ii 'How sleep cleans the brain'.",
+          "keyPhrase": "Cerebrospinal fluid is pumped through these channels, flushing out toxic proteins",
+          "remark": "'Cleans' is a paraphrase of 'flushing out toxic proteins / waste-removal system'."
+        },
+        {
+          "id": "q3", "number": 3, "paragraph": "D",
+          "label": "Paragraph D",
+          "answer": "iv",
+          "hint": "Which paragraph describes N1, N2, N3 and REM stages?",
+          "explanation": "Paragraph D explicitly describes sleep architecture — the stages N1, N2, N3, and REM — matching heading iv 'The stages and structure of a night's sleep'.",
+          "keyPhrase": "Sleep architecture — the structure of sleep across a night — is far more complex than most people realise.",
+          "remark": "'Architecture' and 'structure' are synonyms — a classic IELTS paraphrase."
+        },
+        {
+          "id": "q4", "number": 4, "paragraph": "E",
+          "label": "Paragraph E",
+          "answer": "vii",
+          "hint": "Paragraph E includes both a recommended amount and mentions individual variation. What heading covers this debate?",
+          "explanation": "Paragraph E discusses recommendations (7–9 hours) vs. individual variation (DEC2 gene mutation), representing the 'considerable debate' about how much sleep is needed — heading vii.",
+          "keyPhrase": "The question of how much sleep humans need has generated considerable debate.",
+          "remark": "Do not be distracted by the genetics detail — the main topic is the debate over sleep quantity, not genetics specifically (heading i would be too narrow)."
+        },
+        {
+          "id": "q5", "number": 5, "paragraph": "F",
+          "label": "Paragraph F",
+          "answer": "iii",
+          "hint": "Look for the paragraph describing electric lighting, screens, and shift work.",
+          "explanation": "Paragraph F discusses how modern inventions (electric lighting, screens, shift work) have disrupted sleep — matching heading iii 'Why modern lifestyles are damaging sleep'.",
+          "keyPhrase": "Electric lighting, shift work, and the proliferation of screen-based devices have disrupted the circadian rhythms",
+          "remark": "'Modern society's relationship with sleep is deeply troubled' signals this paragraph is about modern lifestyle impacts."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "true_false_not_given",
+      "title": "Questions 6–10: True / False / Not Given",
+      "instructions": "Do the following statements agree with the information given in the reading passage? Write TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, NOT GIVEN if there is no information on this.",
+      "questions": [
+        {
+          "id": "q6", "number": 6,
+          "text": "Sleep is now fully understood by the scientific community.",
+          "answer": "FALSE",
+          "hint": "Read Paragraph A carefully. Does it say sleep is fully understood or not?",
+          "explanation": "FALSE. Paragraph A states 'it remains one of the least understood' biological processes — directly contradicting 'fully understood'.",
+          "keyPhrase": "it remains one of the least understood",
+          "remark": "This is a direct contradiction. The passage says 'least understood', the question says 'fully understood' — classic FALSE pattern."
+        },
+        {
+          "id": "q7", "number": 7,
+          "text": "People who slept after learning a skill showed better performance than those who stayed awake.",
+          "answer": "TRUE",
+          "hint": "Look in Paragraph B for the Harvard study results.",
+          "explanation": "TRUE. Paragraph B states that people who slept 'performed significantly better on follow-up tests 12 hours later compared to those who remained awake'.",
+          "keyPhrase": "performed significantly better on follow-up tests 12 hours later compared to those who remained awake",
+          "remark": "'Better performance' directly paraphrases 'performed significantly better' — straightforward TRUE."
+        },
+        {
+          "id": "q8", "number": 8,
+          "text": "Maiken Nedergaard received an award for her research on the glymphatic system.",
+          "answer": "NOT GIVEN",
+          "hint": "The passage mentions Nedergaard's name and research — does it say anything about awards?",
+          "explanation": "NOT GIVEN. Paragraph C mentions Nedergaard's research but makes no reference to any award or recognition she may have received.",
+          "keyPhrase": "First described by Danish neuroscientist Maiken Nedergaard in 2013",
+          "remark": "A common NOT GIVEN trap — the person is mentioned, but the specific detail in the question (award) is absent. Do not infer."
+        },
+        {
+          "id": "q9", "number": 9,
+          "text": "REM sleep is more prominent in the early part of the night.",
+          "answer": "FALSE",
+          "hint": "Paragraph D describes how sleep stages shift throughout the night. Check what happens early vs. late.",
+          "explanation": "FALSE. Paragraph D states 'early cycles contain more N3 deep sleep, while later cycles contain proportionally more REM' — so REM is more prominent later, not early.",
+          "keyPhrase": "early cycles contain more N3 deep sleep, while later cycles contain proportionally more REM",
+          "remark": "The question reverses the passage's information — a typical FALSE pattern. Always check 'early' vs 'late' references."
+        },
+        {
+          "id": "q10", "number": 10,
+          "text": "Fewer than 3% of people can function well on less than six hours of sleep due to a genetic mutation.",
+          "answer": "TRUE",
+          "hint": "Paragraph E mentions a specific percentage and a gene name.",
+          "explanation": "TRUE. Paragraph E states 'A small subset of the population — estimated at less than 3% — carry a genetic mutation in the DEC2 gene that allows them to function optimally on six hours or fewer'.",
+          "keyPhrase": "estimated at less than 3% — carry a genetic mutation in the DEC2 gene that allows them to function optimally on six hours or fewer",
+          "remark": "Numbers are often tested directly. 'Function well' = 'function optimally' — simple paraphrase."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "multiple_choice",
+      "title": "Questions 11–13: Multiple Choice",
+      "instructions": "Choose the correct letter, A, B, C or D.",
+      "questions": [
+        {
+          "id": "q11", "number": 11,
+          "text": "What is the main function of the glymphatic system described in Paragraph C?",
+          "options": [
+            { "letter": "A", "text": "To produce cerebrospinal fluid during wakefulness" },
+            { "letter": "B", "text": "To remove toxic proteins from the brain during sleep" },
+            { "letter": "C", "text": "To regulate the production of beta-amyloid" },
+            { "letter": "D", "text": "To transfer memories from the hippocampus to the neocortex" }
+          ],
+          "answer": "B",
+          "hint": "Re-read the sentence about cerebrospinal fluid being 'pumped through these channels'.",
+          "explanation": "B is correct. The glymphatic system 'flushes out toxic proteins including beta-amyloid'. A is wrong (it's active during sleep, not wakefulness). C misreads the passage (it removes, not regulates, beta-amyloid). D describes memory consolidation from Paragraph B.",
+          "keyPhrase": "Cerebrospinal fluid is pumped through these channels, flushing out toxic proteins",
+          "remark": "Option D is a distractor using vocabulary from a different paragraph — always anchor your answer to the correct paragraph."
+        },
+        {
+          "id": "q12", "number": 12,
+          "text": "According to the passage, what is a problem with sleeping pills as a treatment for insomnia?",
+          "options": [
+            { "letter": "A", "text": "They are less effective than CBT-I in the short term" },
+            { "letter": "B", "text": "They are not widely available in most countries" },
+            { "letter": "C", "text": "They do not address the root causes of insomnia" },
+            { "letter": "D", "text": "They cause permanent damage to sleep architecture" }
+          ],
+          "answer": "C",
+          "hint": "Look at Paragraph G for the comparison between CBT-I and sleeping pills.",
+          "explanation": "C is correct. Paragraph G states sleeping pills 'do not treat the underlying causes'. A is wrong — the passage says CBT-I is better in the long term, not short term. B and D are not mentioned.",
+          "keyPhrase": "they do not treat the underlying causes and are associated with tolerance, dependence, and next-day cognitive impairment",
+          "remark": "'Underlying causes' = 'root causes' — paraphrase. Option A reverses the long-term/short-term distinction."
+        },
+        {
+          "id": "q13", "number": 13,
+          "text": "What does the writer mean by calling sleep deprivation a 'silent epidemic'?",
+          "options": [
+            { "letter": "A", "text": "People sleep quietly and do not realise they have a problem" },
+            { "letter": "B", "text": "The effects build up slowly and are often blamed on other factors" },
+            { "letter": "C", "text": "Governments refuse to acknowledge the scale of the problem" },
+            { "letter": "D", "text": "Scientists have been unable to measure its true impact" }
+          ],
+          "answer": "B",
+          "hint": "Paragraph F explains why it is 'silent'. What does it say about the consequences?",
+          "explanation": "B is correct. The passage explains it is 'silent because its consequences are gradual, cumulative, and easily attributed to other causes'. This matches 'build up slowly and are blamed on other factors'. A, C, and D are not supported.",
+          "keyPhrase": "silent because its consequences are gradual, cumulative, and easily attributed to other causes",
+          "remark": "Vocabulary questions like this require reading the explanation given in the passage, not guessing from the word alone."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "fill_blanks",
+      "title": "Questions 14–17: Summary Completion",
+      "instructions": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "preamble": "The structure of sleep, known as ___14___, consists of repeated cycles of approximately 90 minutes. Each cycle moves through stages including light sleep and deep sleep before reaching ___15___ sleep, where dreaming mainly takes place. This final stage is linked to both emotional regulation and ___16___. Early in the night, deep sleep dominates; later cycles feature more of the final stage. The recommended amount of sleep for adults is ___17___ hours per night.",
+      "questions": [
+        {
+          "id": "q14", "number": 14,
+          "label": "14",
+          "answer": "sleep architecture",
+          "acceptedAnswers": ["sleep architecture"],
+          "hint": "Paragraph D opens with a specific term for 'the structure of sleep across a night'.",
+          "explanation": "'Sleep architecture' is the exact term from Paragraph D: 'Sleep architecture — the structure of sleep across a night'.",
+          "keyPhrase": "Sleep architecture — the structure of sleep across a night — is far more complex than most people realise.",
+          "remark": "The dash structure (— definition —) in the passage is a strong signal that the preceding term is the answer to a definition-style gap."
+        },
+        {
+          "id": "q15", "number": 15,
+          "label": "15",
+          "answer": "REM",
+          "acceptedAnswers": ["REM", "rapid eye movement"],
+          "hint": "Which sleep stage is associated with 'most vivid dreaming'?",
+          "explanation": "REM (rapid eye movement) sleep is described as the stage where 'most vivid dreaming occurs'.",
+          "keyPhrase": "It is during REM sleep that most vivid dreaming occurs",
+          "remark": "The summary says 'where dreaming mainly takes place' — 'mainly' paraphrases 'most vivid'."
+        },
+        {
+          "id": "q16", "number": 16,
+          "label": "16",
+          "answer": "creative problem-solving",
+          "acceptedAnswers": ["creative problem-solving", "problem-solving"],
+          "hint": "Paragraph D lists two roles for REM sleep. The first is emotional regulation. What is the second?",
+          "explanation": "The passage states REM 'plays a vital role in emotional regulation and creative problem-solving'. The summary already has 'emotional regulation', so the answer is 'creative problem-solving'.",
+          "keyPhrase": "believed to play a vital role in emotional regulation and creative problem-solving",
+          "remark": "When a summary lists two items with 'and', check the passage for both — one is usually given, one is the gap."
+        },
+        {
+          "id": "q17", "number": 17,
+          "label": "17",
+          "answer": "seven to nine",
+          "acceptedAnswers": ["seven to nine", "7 to 9", "7–9"],
+          "hint": "What specific number range does the National Sleep Foundation give in Paragraph E?",
+          "explanation": "Paragraph E states 'The National Sleep Foundation recommends seven to nine hours per night for adults'.",
+          "keyPhrase": "The National Sleep Foundation recommends seven to nine hours per night for adults",
+          "remark": "Write the answer exactly as it appears. Both '7 to 9' and 'seven to nine' are accepted."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "short_answer",
+      "title": "Questions 18–20: Short Answer",
+      "instructions": "Answer the questions below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+      "questions": [
+        {
+          "id": "q18", "number": 18,
+          "text": "What type of therapy is now considered the best treatment for insomnia?",
+          "answer": "cognitive behavioural therapy",
+          "acceptedAnswers": ["cognitive behavioural therapy", "CBT-I", "cognitive behavioral therapy"],
+          "hint": "Paragraph G names a specific therapy described as 'the gold standard treatment'.",
+          "explanation": "Paragraph G states CBT-I (cognitive behavioural therapy for insomnia) is 'now regarded as the gold standard treatment'.",
+          "keyPhrase": "cognitive behavioural therapy for insomnia (CBT-I) is now regarded as the gold standard treatment",
+          "remark": "'Gold standard' = the best available option. The question asks for the therapy name, not the abbreviation — either is accepted."
+        },
+        {
+          "id": "q19", "number": 19,
+          "text": "Which substance does the glymphatic system help to remove that is linked to Alzheimer's disease?",
+          "answer": "beta-amyloid",
+          "acceptedAnswers": ["beta-amyloid", "beta amyloid"],
+          "hint": "Paragraph C names a specific toxic protein associated with Alzheimer's.",
+          "explanation": "Paragraph C states the system flushes out 'toxic proteins including beta-amyloid, the substance associated with Alzheimer's disease'.",
+          "keyPhrase": "flushing out toxic proteins including beta-amyloid, the substance associated with Alzheimer's disease",
+          "remark": "Scientific names like 'beta-amyloid' must be spelled correctly. The passage gives you the exact word."
+        },
+        {
+          "id": "q20", "number": 20,
+          "text": "What do smartphones and tablets emit that interferes with sleep onset?",
+          "answer": "blue light",
+          "acceptedAnswers": ["blue light"],
+          "hint": "Paragraph F describes what screens emit and its effect on melatonin.",
+          "explanation": "Paragraph F: 'The blue light emitted by smartphones and tablets suppresses melatonin production, delaying the onset of sleep'.",
+          "keyPhrase": "The blue light emitted by smartphones and tablets suppresses melatonin production, delaying the onset of sleep",
+          "remark": "Two-word answers are common in short answer questions. 'Blue light' directly answers 'what do they emit'."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "matching_information",
+      "title": "Questions 21–24: Matching Information",
+      "instructions": "The reading passage has seven paragraphs A–G. Which paragraph contains the following information? You may use any letter more than once.",
+      "questions": [
+        {
+          "id": "q21", "number": 21,
+          "text": "A reference to the negative effects of insufficient sleep on physical health",
+          "answer": "E",
+          "hint": "Look for a paragraph listing health consequences of sleeping too little.",
+          "explanation": "Paragraph E mentions 'weakened immune response, and increased risk of metabolic disorders such as type 2 diabetes' — physical health effects of insufficient sleep.",
+          "keyPhrase": "weakened immune response, and increased risk of metabolic disorders such as type 2 diabetes",
+          "remark": "Matching information requires scanning all paragraphs. Physical health = immune and metabolic effects → Paragraph E."
+        },
+        {
+          "id": "q22", "number": 22,
+          "text": "A mention of a specific year associated with a scientific discovery",
+          "answer": "C",
+          "hint": "Only one paragraph contains a specific year. Scan for numbers.",
+          "explanation": "Paragraph C mentions '2013' — the year Nedergaard first described the glymphatic system.",
+          "keyPhrase": "First described by Danish neuroscientist Maiken Nedergaard in 2013",
+          "remark": "When looking for a specific year, scan numerals quickly. Only Paragraph C contains a year."
+        },
+        {
+          "id": "q23", "number": 23,
+          "text": "An explanation of why people are not always aware of their sleep deprivation",
+          "answer": "F",
+          "hint": "Which paragraph discusses why the effects of poor sleep often go unnoticed?",
+          "explanation": "Paragraph F explains the 'silent epidemic' — consequences are 'gradual, cumulative, and easily attributed to other causes', meaning people don't recognise the real source.",
+          "keyPhrase": "silent because its consequences are gradual, cumulative, and easily attributed to other causes",
+          "remark": "'Not aware' = consequences are 'easily attributed to other causes' — they blame other things, not sleep loss."
+        },
+        {
+          "id": "q24", "number": 24,
+          "text": "A description of two distinct categories of memory affected by sleep",
+          "answer": "B",
+          "hint": "Which paragraph names two types of memory?",
+          "explanation": "Paragraph B names 'declarative memory (facts and events) and procedural memory (skills and habits)' — two distinct categories.",
+          "keyPhrase": "both declarative memory (facts and events) and procedural memory (skills and habits)",
+          "remark": "'Two distinct categories' signals you need a paragraph that explicitly names and distinguishes types — the parenthetical definitions in B are a clear signal."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "matching_sentence_endings",
+      "title": "Questions 25–27: Matching Sentence Endings",
+      "instructions": "Complete each sentence with the correct ending A–F from the box below.",
+      "endings": [
+        { "letter": "A", "text": "demonstrate inferior results compared to behavioural approaches." },
+        { "letter": "B", "text": "varies significantly from person to person." },
+        { "letter": "C", "text": "becomes far more active while a person is asleep." },
+        { "letter": "D", "text": "has decreased over the past hundred years." },
+        { "letter": "E", "text": "is most closely associated with the experience of dreaming." },
+        { "letter": "F", "text": "was first identified by researchers at Harvard Medical School." }
+      ],
+      "questions": [
+        {
+          "id": "q25", "number": 25,
+          "stem": "The glymphatic system",
+          "answer": "C",
+          "hint": "What does Paragraph C say about the glymphatic system's level of activity?",
+          "explanation": "Paragraph C: the glymphatic system 'becomes dramatically more active during sleep — up to ten times more so than during wakefulness'. This matches ending C.",
+          "keyPhrase": "becomes dramatically more active during sleep — up to ten times more so than during wakefulness",
+          "remark": "The stem names the system; scan for what the passage says it DOES. 'Dramatically more active' = 'far more active'."
+        },
+        {
+          "id": "q26", "number": 26,
+          "stem": "The average duration of human sleep",
+          "answer": "D",
+          "hint": "Paragraph F gives a statistic about how sleep duration has changed over time.",
+          "explanation": "Paragraph F states 'average sleep duration has declined by one to two hours over the past century' — matching ending D ('decreased over the past hundred years').",
+          "keyPhrase": "average sleep duration has declined by one to two hours over the past century",
+          "remark": "'Declined' = 'decreased'; 'past century' = 'past hundred years' — double paraphrase."
+        },
+        {
+          "id": "q27", "number": 27,
+          "stem": "The amount of sleep a person needs",
+          "answer": "B",
+          "hint": "Paragraph E discusses how sleep needs differ. Look for the key phrase about individual differences.",
+          "explanation": "Paragraph E states 'individual variation is substantial' regarding sleep needs — matching ending B ('varies significantly from person to person').",
+          "keyPhrase": "individual variation is substantial",
+          "remark": "'Individual variation is substantial' = 'varies significantly from person to person'. Do not choose F — the memory study was in Paragraph B, not about sleep duration needs."
+        }
+      ]
+    }
+  ]
+}
