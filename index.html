@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Reading Practice</title>
+<style>
+  /* ===================================================
+     IELTS READING PRACTICE — BASE SKELETON
+     index.html — DO NOT MODIFY CORE STRUCTURE
+  =================================================== */
+
+  :root {
+    --ielts-blue: #003f7f;
+    --ielts-blue-dark: #002855;
+    --ielts-accent: #0072ce;
+    --ielts-light: #e8f0f8;
+    --ielts-border: #c0cfe0;
+    --text-primary: #1a1a1a;
+    --text-secondary: #444;
+    --text-muted: #777;
+    --bg-page: #f4f6f9;
+    --bg-white: #ffffff;
+    --bg-panel: #f0f4f9;
+    --success: #1a7a2e;
+    --success-bg: #e6f4ea;
+    --error: #c0392b;
+    --error-bg: #fdecea;
+    --warning: #b45309;
+    --warning-bg: #fef3c7;
+    --hint-bg: #fff8e1;
+    --hint-border: #f6c400;
+    --highlight-answer: #fff176;
+    --highlight-key: #b2dfdb;
+    --study-panel: #1e3a5f;
+    --font-main: 'Segoe UI', Arial, sans-serif;
+    --font-passage: Georgia, 'Times New Roman', serif;
+    --radius: 4px;
+    --shadow: 0 1px 4px rgba(0,0,0,0.12);
+    --shadow-md: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    font-family: var(--font-main);
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  a { color: var(--ielts-accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── TOP HEADER ─────────────────────────────────── */
+  .site-header {
+    background: var(--ielts-blue-dark);
+    color: #fff;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .site-header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .site-logo-badge {
+    background: var(--ielts-accent);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  .site-logo-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+
+  .site-logo-text span {
+    color: #7fc8f8;
+    font-weight: 400;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .header-nav a {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.82rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 3px;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .header-nav a:hover, .header-nav a.active {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .header-nav a.active {
+    background: var(--ielts-accent);
+    color: #fff;
+  }
+
+  /* ── MODE TOGGLE BAR ────────────────────────────── */
+  .mode-bar {
+    background: var(--ielts-blue);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .mode-bar-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mode-tabs {
+    display: flex;
+    gap: 0;
+  }
+
+  .mode-tab {
+    padding: 0.55rem 1.2rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.65);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.15s;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .mode-tab:hover { color: rgba(255,255,255,0.9); }
+
+  .mode-tab.active {
+    color: #fff;
+    border-bottom-color: var(--hint-border);
+  }
+
+  .mode-tab .mode-icon { margin-right: 0.4rem; }
+
+  /* ── TIMER ───────────────────────────────────────── */
+  .timer-widget {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+  }
+
+  .timer-display {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.05em;
+    min-width: 70px;
+    text-align: center;
+  }
+
+  .timer-display.warn { color: #ffd740; }
+  .timer-display.urgent { color: #ff5252; animation: blink 1s step-end infinite; }
+
+  @keyframes blink { 50% { opacity: 0.4; } }
+
+  .timer-btn {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 0.72rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: background 0.15s;
+  }
+  .timer-btn:hover { background: rgba(255,255,255,0.25); }
+
+  /* ── MAIN CONTENT ───────────────────────────────── */
+  .main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+
+  /* ── PAGE: HOME ─────────────────────────────────── */
+  .home-hero {
+    background: linear-gradient(135deg, var(--ielts-blue-dark) 0%, var(--ielts-blue) 100%);
+    color: #fff;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .home-hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .home-hero p {
+    font-size: 1rem;
+    opacity: 0.8;
+    max-width: 560px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--ielts-blue);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.65rem 2rem;
+    border-radius: 4px;
+    margin: 0 0.4rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .hero-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    text-decoration: none;
+  }
+  .hero-btn.secondary {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+
+  .home-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .stat-card {
+    background: var(--bg-white);
+    border: 1px solid var(--ielts-border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+
+  .stat-card .stat-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--ielts-blue);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-card .stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .feature-card {
+    background: var(--bg-white);
+    border: 1px solid var(--ielts-border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+
+  .feature-card .feature-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .feature-card h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ielts-blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .feature-card p {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* ── SHARED COMPONENTS ───────────────────────────── */
+  .page-title-bar {
+    background: var(--bg-white);
+    border: 1px solid var(--ielts-border);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    box-shadow: var(--shadow);
+  }
+
+  .page-title-bar h1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ielts-blue);
+  }
+
+  .page-title-bar p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-blue { background: var(--ielts-light); color: var(--ielts-blue); }
+  .badge-green { background: var(--success-bg); color: var(--success); }
+  .badge-orange { background: var(--warning-bg); color: var(--warning); }
+  .badge-red { background: var(--error-bg); color: var(--error); }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  .site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--ielts-border);
+    margin-top: 3rem;
+  }
+
+  /* ── UTILITY ─────────────────────────────────────── */
+  .hidden { display: none !important; }
+  .text-center { text-align: center; }
+
+  /* ── RESPONSIVE ─────────────────────────────────── */
+  @media (max-width: 640px) {
+    .site-header-inner { padding: 0 1rem; }
+    .main-content { padding: 1rem; }
+    .mode-tab { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     SITE HEADER (permanent — do not modify)
+═══════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-logo">
+      <span class="site-logo-badge">IELTS</span>
+      <span class="site-logo-text">Reading <span>Practice</span></span>
+    </div>
+
+    <nav class="header-nav">
+      <a href="index.html" class="active" id="nav-home">Home</a>
+      <a href="resources.html" id="nav-resources">All Tests</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     MODE BAR + TIMER (shared across all pages)
+═══════════════════════════════════════════ -->
+<div class="mode-bar" id="modebar">
+  <div class="mode-bar-inner">
+    <div class="mode-tabs">
+      <div class="mode-tab active" id="tab-exam" onclick="setMode('exam')">
+        <span class="mode-icon">🎯</span>Exam Mode
+      </div>
+      <div class="mode-tab" id="tab-study" onclick="setMode('study')">
+        <span class="mode-icon">📖</span>Study Mode
+      </div>
+    </div>
+
+    <div class="timer-widget" id="timerWidget">
+      <span style="color:rgba(255,255,255,0.6);font-size:0.75rem;">⏱</span>
+      <span class="timer-display" id="timerDisplay">60:00</span>
+      <button class="timer-btn" id="timerToggleBtn" onclick="toggleTimer()">Start</button>
+      <button class="timer-btn" onclick="resetTimer()">Reset</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HOME PAGE CONTENT
+═══════════════════════════════════════════ -->
+<div id="page-home">
+  <div class="home-hero">
+    <h1>IELTS Reading Practice</h1>
+    <p>Practise with real exam-style passages. Improve your score with detailed explanations, hints, and sentence-level feedback.</p>
+    <a href="resources.html" class="hero-btn">Browse All Tests</a>
+    <a href="resources.html" class="hero-btn secondary">Study by Question Type</a>
+  </div>
+
+  <div class="main-content">
+    <div class="home-stats">
+      <div class="stat-card">
+        <div class="stat-num" id="statTests">1</div>
+        <div class="stat-label">Tests Available</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">7</div>
+        <div class="stat-label">Question Types</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">27</div>
+        <div class="stat-label">Sample Questions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="statScore">—</div>
+        <div class="stat-label">Your Best Score</div>
+      </div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Exam Mode</h3>
+        <p>Clean, timed interface matching the real computer-based IELTS exam. No hints, no distractions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📖</div>
+        <h3>Study Mode</h3>
+        <p>Reveals hints, highlights the exact answer sentence in the passage, and explains why each answer is correct or wrong.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💡</div>
+        <h3>Hints & Remarks</h3>
+        <p>Vocabulary notes, paraphrase trap warnings, and common IELTS tricks explained for every question.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>All Question Types</h3>
+        <p>Matching headings, T/F/NG, multiple choice, fill in the blanks, short answer, and more.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Score Tracking</h3>
+        <p>Review your answers, see your band estimate, and identify which question types need the most work.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔢</div>
+        <h3>Filter by Type</h3>
+        <p>In study mode, practise only the question types you find most difficult — skip what you already know.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER (permanent)
+═══════════════════════════════════════════ -->
+<footer class="site-footer">
+  IELTS Reading Practice &nbsp;·&nbsp; For educational use only &nbsp;·&nbsp;
+  Not affiliated with British Council, IDP or Cambridge Assessment English
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     SHARED JS (permanent — timer, mode, utils)
+═══════════════════════════════════════════ -->
+<script>
+  // ── MODE MANAGEMENT ──────────────────────────────────
+  let currentMode = localStorage.getItem('ieltsMode') || 'exam';
+
+  function setMode(mode) {
+    currentMode = mode;
+    localStorage.setItem('ieltsMode', mode);
+
+    document.getElementById('tab-exam').classList.toggle('active', mode === 'exam');
+    document.getElementById('tab-study').classList.toggle('active', mode === 'study');
+
+    // Dispatch event so test pages can listen
+    document.dispatchEvent(new CustomEvent('modechange', { detail: { mode } }));
+  }
+
+  // Restore mode on load
+  setMode(currentMode);
+
+  // ── TIMER ─────────────────────────────────────────────
+  let timerSeconds = 3600;
+  let timerRunning = false;
+  let timerInterval = null;
+
+  function setTimerDuration(seconds) {
+    timerSeconds = seconds;
+    updateTimerDisplay();
+  }
+
+  function toggleTimer() {
+    if (timerRunning) {
+      clearInterval(timerInterval);
+      timerRunning = false;
+      document.getElementById('timerToggleBtn').textContent = 'Start';
+    } else {
+      timerRunning = true;
+      document.getElementById('timerToggleBtn').textContent = 'Pause';
+      timerInterval = setInterval(() => {
+        if (timerSeconds <= 0) {
+          clearInterval(timerInterval);
+          timerRunning = false;
+          document.getElementById('timerDisplay').textContent = '00:00';
+          document.dispatchEvent(new CustomEvent('timesup'));
+          return;
+        }
+        timerSeconds--;
+        updateTimerDisplay();
+      }, 1000);
+    }
+  }
+
+  function resetTimer() {
+    clearInterval(timerInterval);
+    timerRunning = false;
+    document.getElementById('timerToggleBtn').textContent = 'Start';
+    timerSeconds = 3600;
+    updateTimerDisplay();
+  }
+
+  function updateTimerDisplay() {
+    const m = Math.floor(timerSeconds / 60);
+    const s = timerSeconds % 60;
+    const display = document.getElementById('timerDisplay');
+    display.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    display.className = 'timer-display';
+    if (timerSeconds < 300) display.classList.add('urgent');
+    else if (timerSeconds < 600) display.classList.add('warn');
+  }
+
+  // ── UTILITY ───────────────────────────────────────────
+  function navigateTo(url) { window.location.href = url; }
+
+  // Load best score
+  const scores = JSON.parse(localStorage.getItem('ieltsScores') || '{}');
+  const best = Object.values(scores).reduce((max, s) => Math.max(max, s.pct || 0), 0);
+  if (best > 0) document.getElementById('statScore').textContent = best + '%';
+</script>
+
+</body>
+</html>
