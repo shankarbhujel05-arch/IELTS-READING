@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Tests — IELTS Reading Practice</title>
+<style>
+  :root {
+    --ielts-blue: #003f7f; --ielts-blue-dark: #002855; --ielts-accent: #0072ce;
+    --ielts-light: #e8f0f8; --ielts-border: #c0cfe0;
+    --text-primary: #1a1a1a; --text-secondary: #444; --text-muted: #777;
+    --bg-page: #f4f6f9; --bg-white: #ffffff; --bg-panel: #f0f4f9;
+    --success: #1a7a2e; --success-bg: #e6f4ea;
+    --error: #c0392b; --error-bg: #fdecea;
+    --warning: #b45309; --warning-bg: #fef3c7;
+    --font-main: 'Segoe UI', Arial, sans-serif;
+    --radius: 4px; --shadow: 0 1px 4px rgba(0,0,0,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: var(--font-main); background: var(--bg-page); color: var(--text-primary); font-size: 14px; line-height: 1.5; }
+  a { color: var(--ielts-accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .site-header { background: var(--ielts-blue-dark); color: #fff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .site-header-inner { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .site-logo { display: flex; align-items: center; gap: 0.75rem; }
+  .site-logo-badge { background: var(--ielts-accent); color: #fff; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; padding: 0.25rem 0.6rem; border-radius: 3px; text-transform: uppercase; }
+  .site-logo-text { font-size: 1rem; font-weight: 600; color: #fff; letter-spacing: 0.02em; }
+  .site-logo-text span { color: #7fc8f8; font-weight: 400; }
+  .header-nav { display: flex; align-items: center; gap: 0.25rem; }
+  .header-nav a { color: rgba(255,255,255,0.8); font-size: 0.82rem; padding: 0.35rem 0.85rem; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .header-nav a:hover, .header-nav a.active { background: rgba(255,255,255,0.12); color: #fff; text-decoration: none; }
+  .header-nav a.active { background: var(--ielts-accent); }
+
+  .mode-bar { background: var(--ielts-blue); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 0 1.5rem; }
+  .mode-bar-inner { max-width: 1400px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .mode-tabs { display: flex; }
+  .mode-tab { padding: 0.55rem 1.2rem; font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.65); cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.15s; letter-spacing: 0.03em; text-transform: uppercase; user-select: none; }
+  .mode-tab:hover { color: rgba(255,255,255,0.9); }
+  .mode-tab.active { color: #fff; border-bottom-color: #f6c400; }
+  .mode-tab .mode-icon { margin-right: 0.4rem; }
+  .timer-widget { display: flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0; }
+  .timer-display { font-size: 1.1rem; font-weight: 700; color: #fff; font-family: 'Courier New', monospace; letter-spacing: 0.05em; min-width: 70px; text-align: center; }
+
+  .main-content { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+
+  /* ── PAGE HEADER ── */
+  .page-header { margin-bottom: 1.5rem; }
+  .page-header h1 { font-size: 1.3rem; font-weight: 700; color: var(--ielts-blue); margin-bottom: 0.25rem; }
+  .page-header p { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* ── FILTER TOOLBAR ── */
+  .filter-bar {
+    background: var(--bg-white);
+    border: 1px solid var(--ielts-border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: var(--shadow);
+  }
+
+  .filter-group { display: flex; align-items: center; gap: 0.5rem; }
+  .filter-group label { font-size: 0.78rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+
+  .filter-select {
+    border: 1px solid var(--ielts-border);
+    border-radius: var(--radius);
+    padding: 0.3rem 0.75rem;
+    font-size: 0.82rem;
+    font-family: var(--font-main);
+    color: var(--text-primary);
+    background: var(--bg-white);
+    cursor: pointer;
+  }
+  .filter-select:focus { outline: 2px solid var(--ielts-accent); border-color: var(--ielts-accent); }
+
+  .filter-divider { width: 1px; height: 24px; background: var(--ielts-border); margin: 0 0.25rem; }
+
+  .qtype-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .qtype-pill {
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    border: 1px solid var(--ielts-border);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--bg-white);
+    color: var(--text-secondary);
+    transition: all 0.15s;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .qtype-pill:hover { border-color: var(--ielts-accent); color: var(--ielts-accent); }
+  .qtype-pill.active { background: var(--ielts-blue); color: #fff; border-color: var(--ielts-blue); }
+
+  .filter-reset {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+  }
+  .filter-reset:hover { color: var(--ielts-blue); background: var(--ielts-light); }
+
+  /* ── STUDY FILTER PANEL ── */
+  .study-filter-panel {
+    background: #1e3a5f;
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    display: none;
+  }
+  .study-filter-panel.visible { display: block; }
+  .study-filter-panel h3 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem; color: #7fc8f8; letter-spacing: 0.04em; text-transform: uppercase; }
+  .study-filter-panel p { font-size: 0.8rem; opacity: 0.75; margin-bottom: 0.75rem; }
+
+  .qtype-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .qtype-checkbox { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; }
+  .qtype-checkbox input { width: 14px; height: 14px; accent-color: #f6c400; cursor: pointer; }
+  .qtype-checkbox span { font-size: 0.8rem; color: rgba(255,255,255,0.85); }
+
+  /* ── TEST GRID ── */
+  .tests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .test-card {
+    background: var(--bg-white);
+    border: 1px solid var(--ielts-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+  .test-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+
+  .test-card-header {
+    background: var(--ielts-blue);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .test-card-header .test-num { font-size: 0.72rem; font-weight: 800; opacity: 0.7; letter-spacing: 0.1em; text-transform: uppercase; }
+  .test-card-header .test-band { font-size: 0.78rem; background: rgba(255,255,255,0.2); padding: 0.15rem 0.55rem; border-radius: 20px; }
+
+  .test-card-body { padding: 1rem; flex: 1; }
+  .test-card-title { font-size: 0.95rem; font-weight: 700; color: var(--ielts-blue); margin-bottom: 0.35rem; }
+  .test-card-source { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+
+  .test-qtypes { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
+  .test-qtype-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.12rem 0.5rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: var(--ielts-light);
+    color: var(--ielts-blue);
+    border: 1px solid var(--ielts-border);
+  }
+
+  .test-meta { display: flex; gap: 1rem; font-size: 0.78rem; color: var(--text-muted); }
+  .test-meta span { display: flex; align-items: center; gap: 0.3rem; }
+
+  .test-card-footer {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--ielts-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-panel);
+  }
+
+  .test-score { font-size: 0.8rem; color: var(--text-muted); }
+  .test-score strong { color: var(--success); }
+
+  .btn-primary {
+    background: var(--ielts-blue);
+    color: #fff;
+    border: none;
+    padding: 0.4rem 1.1rem;
+    border-radius: 3px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: background 0.15s;
+  }
+  .btn-primary:hover { background: var(--ielts-accent); }
+
+  .btn-study {
+    background: #1e3a5f;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 1.1rem;
+    border-radius: 3px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-main);
+    margin-left: 0.4rem;
+    transition: background 0.15s;
+  }
+  .btn-study:hover { background: #2d5380; }
+
+  /* ── EMPTY STATE ── */
+  .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
+  .empty-state .empty-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+  .empty-state h3 { font-size: 1rem; margin-bottom: 0.4rem; color: var(--text-secondary); }
+
+  /* ── SECTION DIVIDER ── */
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--ielts-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--ielts-light);
+    margin-bottom: 1rem;
+  }
+
+  .site-footer { text-align: center; padding: 1.5rem; font-size: 0.76rem; color: var(--text-muted); border-top: 1px solid var(--ielts-border); margin-top: 3rem; }
+
+  @media (max-width: 640px) {
+    .main-content { padding: 1rem; }
+    .tests-grid { grid-template-columns: 1fr; }
+    .filter-bar { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-logo">
+      <span class="site-logo-badge">IELTS</span>
+      <span class="site-logo-text">Reading <span>Practice</span></span>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="resources.html" class="active">All Tests</a>
+    </nav>
+  </div>
+</header>
+
+<!-- MODE BAR -->
+<div class="mode-bar">
+  <div class="mode-bar-inner">
+    <div class="mode-tabs">
+      <div class="mode-tab" id="tab-exam" onclick="setMode('exam')"><span class="mode-icon">🎯</span>Exam Mode</div>
+      <div class="mode-tab" id="tab-study" onclick="setMode('study')"><span class="mode-icon">📖</span>Study Mode</div>
+    </div>
+    <div class="timer-widget">
+      <span style="color:rgba(255,255,255,0.6);font-size:0.75rem;">⏱</span>
+      <span class="timer-display" id="timerDisplay">60:00</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main-content">
+
+  <div class="page-header">
+    <h1>All Tests</h1>
+    <p>Browse and filter IELTS Reading practice tests by difficulty, question type, or passage topic.</p>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="filter-group">
+      <label>Difficulty</label>
+      <select class="filter-select" id="filterDifficulty" onchange="applyFilters()">
+        <option value="">All Bands</option>
+        <option value="5-6">Band 5–6</option>
+        <option value="6-7">Band 6–7</option>
+        <option value="7-8">Band 7–8</option>
+        <option value="8-9">Band 8–9</option>
+      </select>
+    </div>
+
+    <div class="filter-divider"></div>
+
+    <div class="filter-group">
+      <label>Question Type</label>
+    </div>
+    <div class="qtype-pills" id="qtypePills">
+      <div class="qtype-pill active" data-type="" onclick="filterByType(this, '')">All Types</div>
+      <div class="qtype-pill" data-type="matching_headings" onclick="filterByType(this, 'matching_headings')">Matching Headings</div>
+      <div class="qtype-pill" data-type="true_false_not_given" onclick="filterByType(this, 'true_false_not_given')">T/F/NG</div>
+      <div class="qtype-pill" data-type="yes_no_not_given" onclick="filterByType(this, 'yes_no_not_given')">Y/N/NG</div>
+      <div class="qtype-pill" data-type="multiple_choice" onclick="filterByType(this, 'multiple_choice')">Multiple Choice</div>
+      <div class="qtype-pill" data-type="fill_blanks" onclick="filterByType(this, 'fill_blanks')">Fill in Blanks</div>
+      <div class="qtype-pill" data-type="short_answer" onclick="filterByType(this, 'short_answer')">Short Answer</div>
+      <div class="qtype-pill" data-type="matching_information" onclick="filterByType(this, 'matching_information')">Matching Info</div>
+      <div class="qtype-pill" data-type="matching_sentence_endings" onclick="filterByType(this, 'matching_sentence_endings')">Sentence Endings</div>
+    </div>
+
+    <div class="filter-reset" onclick="resetFilters()">✕ Clear Filters</div>
+  </div>
+
+  <!-- STUDY MODE: QUESTION TYPE PRACTICE PANEL -->
+  <div class="study-filter-panel" id="studyFilterPanel">
+    <h3>📖 Study Mode — Practice by Question Type</h3>
+    <p>Select which question types to include when you open a test in study mode. Deselect types you want to skip.</p>
+    <div class="qtype-grid" id="studyQtypeGrid">
+      <label class="qtype-checkbox"><input type="checkbox" value="matching_headings" checked> <span>Matching Headings</span></label>
+      <label class="qtype-checkbox"><input type="checkbox" value="true_false_not_given" checked> <span>True / False / Not Given</span></label>
+      <label class="qtype-checkbox"><input type="checkbox" value="yes_no_not_given" checked> <span>Yes / No / Not Given</span></label>
+      <label class="qtype-checkbox"><input type="checkbox" value="multiple_choice" checked> <span>Multiple Choice</span></label>
+      <label class="qtype-checkbox"><input type="checkbox" value="fill_blanks" checked> <span>Fill in Blanks / Summary</span></label>
+      <label class="qtype-checkbox"><input type="checkbox" value="short_answer" checked> <span>Short Answer</span></label>
+      <label class="qtype-checkbox"><input type="checkbox" value="matching_information" checked> <span>Matching Information</span></label>
+      <label class="qtype-checkbox"><input type="checkbox" value="matching_sentence_endings" checked> <span>Matching Sentence Endings</span></label>
+      <label class="qtype-checkbox"><input type="checkbox" value="matching_features" checked> <span>Matching Features</span></label>
+      <label class="qtype-checkbox"><input type="checkbox" value="diagram_labelling" checked> <span>Diagram Labelling</span></label>
+    </div>
+  </div>
+
+  <!-- TESTS LIST -->
+  <div class="section-label">Available Tests (<span id="testCount">0</span>)</div>
+  <div class="tests-grid" id="testsGrid">
+    <div class="empty-state">
+      <div class="empty-icon">⏳</div>
+      <h3>Loading tests...</h3>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  IELTS Reading Practice &nbsp;·&nbsp; For educational use only &nbsp;·&nbsp;
+  Not affiliated with British Council, IDP or Cambridge Assessment English
+</footer>
+
+<script>
+  // ── TEST REGISTRY ─────────────────────────────────────
+  // Add new tests here as { file, title, source, difficulty, questionTypes, totalQ }
+  const TEST_REGISTRY = [
+    {
+      id: 'test-001',
+      file: 'viewer.html?test=data/test-001.json',
+      title: 'The Science of Sleep',
+      source: 'Academic Reading — Practice Test 1',
+      difficulty: '7-8',
+      difficultyLabel: 'Band 7–8',
+      totalQ: 27,
+      timeLimit: 3600,
+      questionTypes: ['matching_headings','true_false_not_given','multiple_choice','fill_blanks','short_answer','matching_information','matching_sentence_endings']
+    }
+    // ← Add more tests here
+  ];
+
+  const QTYPE_LABELS = {
+    'matching_headings': 'Matching Headings',
+    'true_false_not_given': 'T/F/NG',
+    'yes_no_not_given': 'Y/N/NG',
+    'multiple_choice': 'Multiple Choice',
+    'fill_blanks': 'Fill in Blanks',
+    'short_answer': 'Short Answer',
+    'matching_information': 'Matching Info',
+    'matching_sentence_endings': 'Sentence Endings',
+    'matching_features': 'Matching Features',
+    'diagram_labelling': 'Diagram Labelling'
+  };
+
+  // ── FILTERS ───────────────────────────────────────────
+  let activeTypeFilter = '';
+
+  function filterByType(el, type) {
+    activeTypeFilter = type;
+    document.querySelectorAll('.qtype-pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const diff = document.getElementById('filterDifficulty').value;
+    const filtered = TEST_REGISTRY.filter(t => {
+      const diffOk = !diff || t.difficulty === diff;
+      const typeOk = !activeTypeFilter || t.questionTypes.includes(activeTypeFilter);
+      return diffOk && typeOk;
+    });
+    renderTests(filtered);
+  }
+
+  function resetFilters() {
+    document.getElementById('filterDifficulty').value = '';
+    activeTypeFilter = '';
+    document.querySelectorAll('.qtype-pill').forEach(p => p.classList.remove('active'));
+    document.querySelector('.qtype-pill[data-type=""]').classList.add('active');
+    applyFilters();
+  }
+
+  // ── RENDER ────────────────────────────────────────────
+  function renderTests(tests) {
+    const grid = document.getElementById('testsGrid');
+    document.getElementById('testCount').textContent = tests.length;
+
+    if (tests.length === 0) {
+      grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">🔍</div><h3>No tests match your filters</h3><p>Try clearing your filters to see all available tests.</p></div>`;
+      return;
+    }
+
+    const scores = JSON.parse(localStorage.getItem('ieltsScores') || '{}');
+
+    grid.innerHTML = tests.map(t => {
+      const score = scores[t.id];
+      const scoreHtml = score
+        ? `<span class="test-score">Best: <strong>${score.pct}%</strong> (${score.correct}/${score.total})</span>`
+        : `<span class="test-score" style="color:var(--text-muted)">Not attempted</span>`;
+
+      const qtags = t.questionTypes.map(qt =>
+        `<span class="test-qtype-tag">${QTYPE_LABELS[qt] || qt}</span>`
+      ).join('');
+
+      return `
+      <div class="test-card" onclick="openTest('${t.id}', '${t.file}')">
+        <div class="test-card-header">
+          <span class="test-num">Test ${t.id.replace('test-','').replace(/^0+/,'')}</span>
+          <span class="test-band">${t.difficultyLabel}</span>
+        </div>
+        <div class="test-card-body">
+          <div class="test-card-title">${t.title}</div>
+          <div class="test-card-source">${t.source}</div>
+          <div class="test-qtypes">${qtags}</div>
+          <div class="test-meta">
+            <span>📝 ${t.totalQ} questions</span>
+            <span>⏱ ${Math.floor(t.timeLimit/60)} min</span>
+          </div>
+        </div>
+        <div class="test-card-footer">
+          ${scoreHtml}
+          <div>
+            <button class="btn-primary" onclick="event.stopPropagation(); openTest('${t.id}', '${t.file}', 'exam')">Start Exam</button>
+            <button class="btn-study" onclick="event.stopPropagation(); openTest('${t.id}', '${t.file}', 'study')">Study</button>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  function openTest(id, file, forceMode) {
+    if (forceMode) {
+      localStorage.setItem('ieltsMode', forceMode);
+    }
+    // Pass active study qtypes if in study mode
+    const activeMode = forceMode || localStorage.getItem('ieltsMode') || 'exam';
+    if (activeMode === 'study') {
+      const qtypes = Array.from(document.querySelectorAll('#studyQtypeGrid input:checked'))
+        .map(cb => cb.value);
+      localStorage.setItem('studyQtypes', JSON.stringify(qtypes));
+    }
+    window.location.href = file;
+  }
+
+  // ── MODE ──────────────────────────────────────────────
+  let currentMode = localStorage.getItem('ieltsMode') || 'exam';
+
+  function setMode(mode) {
+    currentMode = mode;
+    localStorage.setItem('ieltsMode', mode);
+    document.getElementById('tab-exam').classList.toggle('active', mode === 'exam');
+    document.getElementById('tab-study').classList.toggle('active', mode === 'study');
+    document.getElementById('studyFilterPanel').classList.toggle('visible', mode === 'study');
+  }
+
+  // ── INIT ──────────────────────────────────────────────
+  setMode(currentMode);
+  applyFilters();
+</script>
+
+</body>
+</html>
